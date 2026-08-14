@@ -2,7 +2,7 @@ Student information
 
 |Detail|Information|
 |------|-----------|
-|**Student Name**|Mahlatse Mokabane |
+|**Student Name**|Mpshadi Mahlatse Mokabane |
 |**Student Number**| ST10442162|
 |**Group**|1|
 |**Module**|Web Development|
