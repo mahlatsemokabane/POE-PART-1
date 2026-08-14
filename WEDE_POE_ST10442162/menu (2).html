@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Brew & Bean Artisan Coffee — ethically sourced single-origin coffee, community events and homemade pastries.">
+<title>Menu | Brew & Bean Artisan Coffee</title><link rel="stylesheet" href="style.css"><style>
+.menu-card{display:flex;align-items:center;gap:18px}
+.menu-photo{width:90px;height:90px;flex:0 0 90px;overflow:hidden;border-radius:12px}
+.menu-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.menu-card>.price{margin-left:auto;white-space:nowrap;font-weight:700}
+@media(max-width:600px){.menu-photo{width:70px;height:70px;flex-basis:70px}}
+</style></head>
+<body data-page="menu">
+<header><div class="container nav">
+<a class="brand" href="index.html"><span class="logo">☕</span>Brew & Bean</a>
+<button class="menu-btn" aria-label="Open navigation">☰</button>
+<nav>
+<a data-page="home" href="index.html">Home</a><a data-page="menu" href="menu.html">Menu</a><a data-page="about" href="about.html">About Us</a><a data-page="events" href="events.html">Events</a><a data-page="contact" href="contact.html">Contact</a>
+</nav></div></header>
+<main><section class="page-hero"><div class="container"><div class="eyebrow">Freshly prepared</div><h1>Our Menu</h1><p>Coffee, tea, pastries, sandwiches and seasonal favourites. Dietary options are clearly marked.</p></div></section>
+<section class="section"><div class="container"><div class="filters"><button class="filter active" data-cat="all">All</button><button class="filter" data-cat="coffee">Coffee & Espresso</button><button class="filter" data-cat="tea">Tea</button><button class="filter" data-cat="food">Food</button><button class="filter" data-cat="seasonal">Seasonal</button></div>
+<div class="card">
+<div class="menu-item" data-cat="coffee"><div class="menu-card"><div class="menu-photo"><img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=300&q=80" alt="Single-Origin Espresso"></div><div><h3>Single-Origin Espresso</h3><p>Rich, balanced and ethically sourced.</p><span class="tag">VG</span></div><div class="price">R32</div></div></div>
+<div class="menu-item" data-cat="coffee"><div class="menu-card"><div class="menu-photo"><img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=300&q=80" alt="Flat White"></div><div><h3>Flat White</h3><p>Double espresso with silky steamed milk.</p></div><div class="price">R38</div></div></div>
+<div class="menu-item" data-cat="coffee"><div class="menu-card"><div class="menu-photo"><img src="https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=300&q=80" alt="Golden Honey Latte"></div><div><h3>Golden Honey Latte</h3><p>Espresso, steamed milk and local honey.</p></div><div class="price">R45</div></div></div>
+<div class="menu-item" data-cat="tea"><div class="menu-card"><div class="menu-photo"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=300&q=80" alt="Rooibos Tea"></div><div><h3>Rooibos Tea</h3><p>Fragrant South African herbal tea.</p><span class="tag">VG</span></div><div class="price">R28</div></div></div>
+<div class="menu-item" data-cat="food"><div class="menu-card"><div class="menu-photo"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=300&q=80" alt="Butter Croissant"></div><div><h3>Butter Croissant</h3><p>Flaky, buttery and baked fresh.</p></div><div class="price">R30</div></div></div>
+<div class="menu-item" data-cat="food"><div class="menu-card"><div class="menu-photo"><img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=300&q=80" alt="Garden Sandwich"></div><div><h3>Garden Sandwich</h3><p>Fresh seasonal vegetables and herb spread.</p><span class="tag">V</span><span class="tag">VG</span></div><div class="price">R55</div></div></div>
+<div class="menu-item" data-cat="seasonal"><div class="menu-card"><div class="menu-photo"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=300&q=80" alt="Seasonal Special"></div><div><h3>Seasonal Special</h3><p>Ask our baristas what is brewing this season.</p></div><div class="price">Ask in store</div></div></div>
+</div></div></section></main>
+<footer><div class="container footer-grid">
+<div><h2>Brew & Bean Artisan Coffee</h2><p>Exceptional, ethically sourced coffee in a warm space where community connections are brewed daily.</p></div>
+<div><h3>Explore</h3><p><a href="menu.html">Menu</a></p><p><a href="about.html">Our Story</a></p><p><a href="events.html">Events</a></p></div>
+<div><h3>Visit</h3><p>Mon–Fri: 7:00–17:00<br>Sat–Sun: 8:00–16:00</p><p>📍 Your local neighbourhood café</p><p>✉ hello@brewandbeancoffee.com</p></div>
+</div><div class="container copyright">© 2026 Brew & Bean Artisan Coffee. Crafted with care.</div></footer>
+<script src="script.js"></script></body></html>
