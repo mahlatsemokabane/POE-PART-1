@@ -1,5 +1,15 @@
-# Brew & Bean Artisan Coffee Website
+Student information
 
+|Detail|Information|
+|------|-----------|
+|**Student Name**|Mahlatse Mokabane |
+|**Student Number**| [ST10442162|
+|**Group**|1|
+|**Module**|Web Development|
+|**Module**|WEDE5020|
+|**Project**|POE PART 1,2,3|
+|**Year**|2026
+# Brew & Bean Artisan Coffee Website
 ## Project Overview
 
 The **Brew & Bean Artisan Coffee Website** is a responsive website prototype designed to provide customers with a modern digital experience for discovering coffee products, exploring café activities, planning visits, and making enquiries.
