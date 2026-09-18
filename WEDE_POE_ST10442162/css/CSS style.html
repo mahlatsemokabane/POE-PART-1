@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brew & Bean · Artisan Coffee</title>
+    <!-- Google Fonts & simple reset -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <style>
+        /* ---------- GLOBAL STYLES & BACKGROUND COLOURS ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #faf7f2;   /* warm off-white base background */
+            color: #2c221c;
+            line-height: 1.5;
+            transition: background-color 0.2s;
+        }
+
+        /* every section gets a distinct, soft background colour */
+        .bg-cream {
+            background-color: #faf7f2;   /* cream */
+        }
+        .bg-latte {
+            background-color: #f3ede4;   /* light latte */
+        }
+        .bg-warm-beige {
+            background-color: #ece4d9;   /* warm beige */
+        }
+        .bg-coffee-tint {
+            background-color: #e8dfd3;   /* slightly deeper coffee tint */
+        }
+        .bg-soft-white {
+            background-color: #fffcf9;
+        }
+
+        /* containers */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header / nav background */
+        header {
+            background-color: #ffffffd9;  /* soft white with transparency */
+            backdrop-filter: blur(6px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 1.4rem;
+            text-decoration: none;
+            color: #3b2b22;
+            letter-spacing: -0.02em;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+        }
+
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #3b2b22;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #4f3d32;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #b45f3b;
+            border-bottom-color: #b45f3b;
+        }
+
+        /* buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #b45f3b;
+            color: white;
+            box-shadow: 0 8px 18px -6px rgba(180, 95, 59, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #9e4f2f;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #3b2b22;
+            border: 1.5px solid #d6c9bc;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f0e8df;
+            border-color: #b45f3b;
+        }
+
+        /* section spacing */
+        .section {
+            padding: 64px 0;
+        }
+
+        .section.alt {
+            padding: 64px 0;
+            background-color: #f3ede4;  /* latte background for alt sections */
+        }
+
+        /* page hero background variants (used in menu/about/events/contact) */
+        .page-hero {
+            background-color: #ece4d9;  /* warm beige */
+            padding: 48px 0 40px;
+            border-bottom: 1px solid #ddd1c2;
+        }
+
+        .page-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #2c221c;
+            margin-top: 6px;
+        }
+
+        .page-hero p {
+            max-width: 580px;
+            color: #4f3d32;
+            font-size: 1.1rem;
+            margin-top: 12px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            color: #b45f3b;
+        }
+
+        /* hero (home specific) */
+        .hero {
+            background-color: #f3ede4;  /* latte */
+            padding: 80px 0 72px;
+            border-bottom: 1px solid #e2d6c9;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin: 12px 0 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #4f3d32;
+            max-width: 560px;
+            margin-bottom: 32px;
+        }
+
+        /* cards */
+        .card {
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 24px 28px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.02);
+            border: 1px solid #efe6dc;
+            transition: box-shadow 0.2s, transform 0.1s;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+        }
+
+        /* grid */
+        .grid {
+            display: grid;
+            gap: 28px;
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        /* icons and tags */
+        .icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: #e8dfd3;
+            color: #3b2b22;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 20px;
+            margin-right: 6px;
+            letter-spacing: 0.02em;
+        }
+
+        /* menu specific (with background colours preserved) */
+        .filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 32px;
+        }
+
+        .filter {
+            background-color: #efe6dc;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 40px;
+            font-weight: 500;
+            color: #3b2b22;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .filter.active,
+        .filter:hover {
+            background-color: #b45f3b;
+            color: white;
+        }
+
+        .menu-card {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            width: 100%;
+        }
+
+        .menu-photo {
+            width: 90px;
+            height: 90px;
+            flex: 0 0 90px;
+            overflow: hidden;
+            border-radius: 16px;
+            background-color: #ece4d9; /* fallback */
+        }
+
+        .menu-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .menu-card > div:not(.menu-photo) {
+            flex: 1;
+        }
+
+        .menu-card .price {
+            margin-left: auto;
+            white-space: nowrap;
+            font-weight: 700;
+            color: #b45f3b;
+            font-size: 1.1rem;
+        }
+
+        .menu-item {
+            border-bottom: 1px solid #efe6dc;
+            padding: 16px 0;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        /* event cards */
+        .event {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .date {
+            background-color: #ece4d9;
+            border-radius: 16px;
+            padding: 10px 12px;
+            text-align: center;
+            min-width: 72px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #3b2b22;
+            line-height: 1.3;
+        }
+
+        .date b {
+            font-size: 1.6rem;
+            display: block;
+            color: #b45f3b;
+            font-weight: 700;
+        }
+
+        /* quote */
+        .quote {
+            background-color: #f3ede4;
+            border-left: 5px solid #b45f3b;
+            padding: 20px 24px;
+            border-radius: 12px;
+            font-style: italic;
+            color: #3b2b22;
+            margin: 24px 0 8px;
+        }
+
+        /* gallery */
+        .gallery {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            transition: transform 0.2s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.01);
+        }
+
+        /* about image */
+        .about-image {
+            width: 100%;
+            border-radius: 28px;
+            object-fit: cover;
+            box-shadow: 0 12px 28px rgba(0,0,0,0.06);
+            min-height: 280px;
+            background-color: #e8dfd3;
+        }
+
+        /* footer background */
+        footer {
+            background-color: #2c221c;
+            color: #e8dfd3;
+            padding: 56px 0 20px;
+            margin-top: 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1.5fr;
+            gap: 40px;
+        }
+
+        footer h2,
+        footer h3 {
+            color: #ffffff;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        footer h2 {
+            font-size: 1.3rem;
+        }
+
+        footer h3 {
+            font-size: 1.1rem;
+        }
+
+        footer p,
+        footer a {
+            color: #cbb9aa;
+            text-decoration: none;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        footer a:hover {
+            color: #ffffff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid #3f322b;
+            color: #9b8a7c;
+            font-size: 0.85rem;
+        }
+
+        /* forms */
+        label {
+            display: block;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            color: #3b2b22;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            border: 1px solid #ddd1c2;
+            background-color: #fffcf9;
+            font-family: inherit;
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+            transition: border 0.2s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #b45f3b;
+            background-color: #ffffff;
+        }
+
+        .form-msg {
+            font-size: 0.9rem;
+            color: #b45f3b;
+            margin-top: 8px;
+        }
+
+        /* ===== MAP EMBED STYLING ===== */
+        .map-wrapper {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            background: #e5dccb;
+            height: 240px;
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        /* responsive */
+        @media (max-width: 900px) {
+            .grid-3 {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                padding: 20px 0 10px;
+            }
+
+            nav.show {
+                display: flex;
+            }
+
+            .nav {
+                justify-content: space-between;
+            }
+
+            .grid-2,
+            .grid-3,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .menu-photo {
+                width: 70px;
+                height: 70px;
+                flex-basis: 70px;
+            }
+
+            .map-wrapper {
+                height: 200px;
+            }
+        }
+
+        /* extra backgrounds for "all files show background colours" 
+           Each major section already has distinct bg, plus card backgrounds */
+        .bg-highlight {
+            background-color: #faf0e6;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav">
+        <a class="brand" href="#">
+            <span class="logo">☕</span>
+            Brew & Bean
+        </a>
+        <button class="menu-btn" aria-label="Open navigation" id="menuBtn">☰</button>
+        <nav id="mainNav">
+            <a href="#" class="active">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#events">Events</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <!-- ========== HOME / HERO ========== -->
+    <section class="hero bg-latte">
+        <div class="container content">
+            <div class="eyebrow">Since 2018 · Artisan Coffee</div>
+            <h1>Good coffee.<br>Great community.</h1>
+            <p>Ethically sourced, single-origin coffee and homemade favourites served in a warm, welcoming neighbourhood space.</p>
+            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+                <a class="btn btn-primary" href="#menu">Explore the menu</a>
+                <a class="btn btn-secondary" href="#events">See events</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHY BREW & BEAN ========== -->
+    <section class="section bg-cream">
+        <div class="container">
+            <div class="section-title" style="text-align: center; margin-bottom: 48px;">
+                <div class="eyebrow">Why Brew & Bean</div>
+                <h2 style="font-size: 2.4rem; letter-spacing: -0.02em; margin: 8px 0 12px;">More than your morning cup</h2>
+                <p style="max-width: 620px; margin: 0 auto; color: #4f3d32;">We care about quality, sustainability and the people who make our café a community gathering spot.</p>
+            </div>
+            <div class="grid grid-3">
+                <article class="card bg-soft-white">
+                    <div class="icon">🌱</div>
+                    <h3>Ethical sourcing</h3>
+                    <p>Single-origin coffee selected with care and a commitment to responsible sourcing.</p>
+                </article>
+                <article class="card bg-soft-white">
+                    <div class="icon">🤝</div>
+                    <h3>Community first</h3>
+                    <p>Coffee tastings, workshops and everyday moments that bring neighbours together.</p>
+                </article>
+                <article class="card bg-soft-white">
+                    <div class="icon">🥐</div>
+                    <h3>Made for the moment</h3>
+                    <p>Pair your coffee with homemade pastries and thoughtful plant-based options.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MENU (with distinct background) ========== -->
+    <section id="menu" class="section bg-warm-beige">
+        <div class="container">
+            <div class="page-hero" style="background: transparent; padding: 0 0 16px; border-bottom: none;">
+                <div class="eyebrow">Freshly prepared</div>
+                <h1 style="font-size: 2.6rem; margin-top: 4px;">Our Menu</h1>
+                <p style="max-width: 600px; color: #4f3d32;">Coffee, tea, pastries, sandwiches and seasonal favourites. Dietary options are clearly marked.</p>
+            </div>
+            <div class="filters" style="margin-top: 24px;">
+                <button class="filter active">All</button>
+                <button class="filter">Coffee & Espresso</button>
+                <button class="filter">Tea</button>
+                <button class="filter">Food</button>
+                <button class="filter">Seasonal</button>
+            </div>
+            <div class="card bg-soft-white" style="padding: 20px 28px; background-color: #fffcf9;">
+                <!-- Espresso -->
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-photo"><img src="https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?auto=format&fit=crop&w=300&q=80" alt="Espresso"></div>
+                        <div><h3>Single-Origin Espresso</h3><p>Rich, balanced and ethically sourced.</p><span class="tag">VG</span></div>
+                        <div class="price">R32</div>
+                    </div>
+                </div>
+                <!-- Flat White -->
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-photo"><img src="https://images.unsplash.com/photo-1570968915860-54d5c301fa9f?auto=format&fit=crop&w=300&q=80" alt="Flat White"></div>
+                        <div><h3>Flat White</h3><p>Double espresso with silky steamed milk.</p></div>
+                        <div class="price">R38</div>
+                    </div>
+                </div>
+                <!-- Honey Latte -->
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-photo"><img src="https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=300&q=80" alt="Honey Latte"></div>
+                        <div><h3>Golden Honey Latte</h3><p>Espresso, steamed milk and local honey.</p></div>
+                        <div class="price">R45</div>
+                    </div>
+                </div>
+                <!-- Rooibos -->
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-photo"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=300&q=80" alt="Rooibos"></div>
+                        <div><h3>Rooibos Tea</h3><p>Fragrant South African herbal tea.</p><span class="tag">VG</span></div>
+                        <div class="price">R28</div>
+                    </div>
+                </div>
+                <!-- Croissant -->
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-photo"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=300&q=80" alt="Croissant"></div>
+                        <div><h3>Butter Croissant</h3><p>Flaky, buttery and baked fresh.</p></div>
+                        <div class="price">R30</div>
+                    </div>
+                </div>
+                <!-- Sandwich -->
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-photo"><img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=300&q=80" alt="Sandwich"></div>
+                        <div><h3>Garden Sandwich</h3><p>Fresh seasonal vegetables and herb spread.</p><span class="tag">V</span><span class="tag">VG</span></div>
+                        <div class="price">R55</div>
+                    </div>
+                </div>
+                <!-- Seasonal -->
+                <div class="menu-item">
+                    <div class="menu-card">
+                        <div class="menu-photo"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=300&q=80" alt="Seasonal"></div>
+                        <div><h3>Seasonal Special</h3><p>Ask our baristas what is brewing this season.</p></div>
+                        <div class="price">Ask in store</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section id="about" class="section bg-latte">
+        <div class="container grid grid-2" style="align-items: center;">
+            <img class="about-image" src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1000&q=80" alt="Warm café interior">
+            <div>
+                <div class="eyebrow">Our story</div>
+                <h2 style="font-size: 2.2rem; margin: 8px 0 16px;">Rooted in coffee, grown through community.</h2>
+                <p>Brew & Bean Artisan Coffee was founded in 2018 by siblings Mia and James Peterson. They began with a small coffee cart at local farmers' markets, serving ethically sourced, single-origin coffee and homemade pastries.</p>
+                <p style="margin-top: 12px;">In 2020, they opened their first brick-and-mortar location, which has become a neighbourhood gathering spot. Today, sustainability, ethical sourcing and a warm atmosphere remain at the heart of the business.</p>
+                <div class="quote">“To serve exceptional, ethically sourced coffee while creating a welcoming space where community connections are brewed daily.”</div>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 48px;">
+            <div class="grid grid-2" style="gap: 24px;">
+                <div class="card bg-soft-white"><h2 style="font-size: 1.5rem; margin-bottom: 8px;">Our mission</h2><p>Serve exceptional, ethically sourced coffee while creating a welcoming space where community connections are brewed daily.</p></div>
+                <div class="card bg-soft-white"><h2 style="font-size: 1.5rem; margin-bottom: 8px;">Our vision</h2><p>Become the most loved local coffee shop chain in the region, known for quality, sustainability and community engagement.</p></div>
+            </div>
+        </div>
+        <!-- gallery -->
+        <div class="container" style="margin-top: 48px;">
+            <div class="section-title" style="text-align: center; margin-bottom: 28px;">
+                <div class="eyebrow">The café</div>
+                <h2 style="font-size: 2rem;">A warm place to pause</h2>
+            </div>
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1000&q=80" alt="Coffee shop">
+                <img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=800&q=80" alt="Coffee cup">
+                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=80" alt="Coffee preparation">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== EVENTS ========== -->
+    <section id="events" class="section bg-coffee-tint">
+        <div class="container">
+            <div class="eyebrow">Community calendar</div>
+            <h1 style="font-size: 2.6rem; margin: 6px 0 12px;">Events & Workshops</h1>
+            <p style="margin-bottom: 40px; color: #4f3d32;">Learn, taste, create and connect with fellow coffee lovers.</p>
+
+            <div class="grid grid-2">
+                <article class="card event bg-soft-white">
+                    <div class="date"><b>18</b>SEP</div>
+                    <div><h3>Single-Origin Coffee Tasting</h3><p>Explore flavour notes and brewing differences across our featured origins.</p><span class="tag">15+ spaces</span></div>
+                </article>
+                <article class="card event bg-soft-white">
+                    <div class="date"><b>26</b>SEP</div>
+                    <div><h3>Latte Art Workshop</h3><p>Learn the basics of milk steaming and pour your first latte-art pattern.</p><span class="tag">Beginner friendly</span></div>
+                </article>
+                <article class="card event bg-soft-white">
+                    <div class="date"><b>10</b>OCT</div>
+                    <div><h3>Community Coffee Morning</h3><p>A relaxed morning for neighbours, remote workers and local professionals.</p></div>
+                </article>
+                <article class="card event bg-soft-white">
+                    <div class="date"><b>24</b>OCT</div>
+                    <div><h3>Sustainability Talk</h3><p>Discuss ethical sourcing and practical ways cafés and customers can reduce waste.</p></div>
+                </article>
+            </div>
+
+            <div class="grid grid-2" style="margin-top: 48px; align-items: center;">
+                <div>
+                    <div class="eyebrow">Reserve a place</div>
+                    <h2 style="font-size: 2rem; margin: 8px 0 12px;">Join the next workshop</h2>
+                    <p>Use the enquiry form to request a booking or ask about private events and catering.</p>
+                    <a class="btn btn-primary" href="#contact" style="margin-top: 16px;">Enquire now</a>
+                </div>
+                <div class="card bg-soft-white">
+                    <h3>Past event highlights</h3>
+                    <p>Our events are designed around learning, conversation and great coffee — with photo galleries planned as part of the full website experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CONTACT (with real map embed) ========== -->
+    <section id="contact" class="section bg-cream">
+        <div class="container">
+            <div class="eyebrow">Let's connect</div>
+            <h1 style="font-size: 2.6rem; margin: 6px 0 12px;">Contact & Enquiries</h1>
+            <p style="margin-bottom: 40px; color: #4f3d32;">Questions, catering requests, private events or feedback — we'd love to hear from you.</p>
+
+            <div class="grid grid-2">
+                <div>
+                    <div class="card bg-soft-white">
+                        <h2>Visit Brew & Bean</h2>
+                        <p>📍 12 Roast Lane, Cape Town, 8001</p>
+                        <p>🕒 <b>Mon–Fri:</b> 7:00–17:00<br><b>Sat–Sun:</b> 8:00–16:00</p>
+                        <p>☎ +27 21 123 4567<br>✉ hello@brewandbeancoffee.com</p>
+                        <p>Follow us on Instagram and Facebook for daily updates, specials and event announcements.</p>
+                    </div>
+                    <!-- REAL MAP EMBED (Google Maps, Cape Town) -->
+                    <div class="card bg-soft-white" style="margin-top: 20px; padding: 20px 20px 0 20px;">
+                        <h3 style="margin-bottom: 12px;">Find us on the map</h3>
+                        <div class="map-wrapper">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3308.680784260754!2d18.42405531519422!3d-33.92486858009636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc500f8826e6f7%3A0x5a5f1e4b3d7b9b0!2sCape%20Town%20City%20Centre%2C%20Cape%20Town%2C%208001%2C%20South%20Africa!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Brew & Bean location on Google Maps">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="card bg-soft-white">
+                    <h2>Send an enquiry</h2>
+                    <p>Tell us what you need and we'll get back to you.</p>
+                    <form>
+                        <div><label>Name</label><input required placeholder="Your name"></div>
+                        <div><label>Email</label><input type="email" required placeholder="you@example.com"></div>
+                        <div><label>Enquiry type</label><select><option>Catering</option><option>Private event</option><option>General enquiry</option><option>Feedback</option></select></div>
+                        <div><label>Message</label><textarea required placeholder="How can we help?"></textarea></div>
+                        <button class="btn btn-primary" type="submit" style="width: 100%;">Send enquiry</button>
+                        <div class="form-msg"></div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- newsletter -->
+            <div style="margin-top: 56px; text-align: center;">
+                <div class="eyebrow">Stay in the loop</div>
+                <h2 style="font-size: 2rem; margin: 8px 0 12px;">Join our newsletter</h2>
+                <p style="margin-bottom: 20px;">Get seasonal specials, workshop dates and coffee news.</p>
+                <form style="max-width: 560px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+                    <input type="email" required placeholder="Email address" style="flex: 2 1 260px; margin-bottom: 0;">
+                    <button class="btn btn-primary" type="submit" style="flex: 0 1 auto;">Subscribe</button>
+                    <div class="form-msg" style="width: 100%;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container footer-grid">
+        <div>
+            <h2>Brew & Bean Artisan Coffee</h2>
+            <p>Exceptional, ethically sourced coffee in a warm space where community connections are brewed daily.</p>
+        </div>
+        <div>
+            <h3>Explore</h3>
+            <p><a href="#menu">Menu</a></p>
+            <p><a href="#about">Our Story</a></p>
+            <p><a href="#events">Events</a></p>
+        </div>
+        <div>
+            <h3>Visit</h3>
+            <p>Mon–Fri: 7:00–17:00<br>Sat–Sun: 8:00–16:00</p>
+            <p>📍 12 Roast Lane, Cape Town</p>
+            <p>✉ hello@brewandbeancoffee.com</p>
+        </div>
+    </div>
+    <div class="container copyright">© 2026 Brew & Bean Artisan Coffee. Crafted with care.</div>
+</footer>
+
+<script>
+    // simple mobile menu toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mainNav = document.getElementById('mainNav');
+    if (
