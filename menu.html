@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coffee, Tea &amp; Food Menu | Brew &amp; Bean Cape Town</title>
+<meta name="description" content="Browse the Brew &amp; Bean menu: single-origin espresso, flat whites, rooibos tea, fresh pastries and vegan options. Search, filter and sort to find your favourite.">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://*.tile.openstreetmap.org https://cdnjs.cloudflare.com; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#2c221c">
+<link rel="canonical" href="https://YOUR-SITE.netlify.app/menu.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Brew & Bean Artisan Coffee">
+<meta property="og:title" content="Coffee, Tea &amp; Food Menu | Brew &amp; Bean Cape Town"><meta property="og:description" content="Browse the Brew &amp; Bean menu: single-origin espresso, flat whites, rooibos tea, fresh pastries and vegan options. Search, filter and sort to find your favourite.">
+<meta property="og:url" content="https://YOUR-SITE.netlify.app/menu.html"><meta property="og:image" content="https://YOUR-SITE.netlify.app/images/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header>
+<div class="container nav">
+<a class="brand" href="index.html" aria-label="Brew &amp; Bean home"><span class="logo" aria-hidden="true">☕</span>Brew &amp; Bean</a>
+<button class="menu-btn" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">☰</button>
+<nav id="site-nav" aria-label="Main"><a href="index.html">Home</a><a href="menu.html" aria-current="page">Menu</a><a href="about.html">About Us</a><a href="events.html">Events</a><a href="enquiry.html">Enquiry</a><a href="contact.html">Contact</a></nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero"><div class="container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › Menu</nav><div class="eyebrow">Freshly prepared</div><h1>Our Menu</h1><p>Coffee, tea, pastries, sandwiches and seasonal favourites. Dietary options are clearly marked.</p></div></section>
+
+<section class="section"><div class="container">
+<div class="toolbar">
+<div><label for="menu-search">Search the menu</label><input id="menu-search" type="search" placeholder="Try “latte”, “vegan” or “tea”" maxlength="40" autocomplete="off"></div>
+<div><label for="menu-sort">Sort by</label><select id="menu-sort"><option value="default">Featured</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option><option value="name">Name A–Z</option></select></div>
+</div>
+<div class="filters" role="group" aria-label="Filter by category">
+<button class="filter active" type="button" data-cat="all" aria-pressed="true">All</button><button class="filter" type="button" data-cat="coffee" aria-pressed="false">Coffee &amp; Espresso</button><button class="filter" type="button" data-cat="tea" aria-pressed="false">Tea</button><button class="filter" type="button" data-cat="food" aria-pressed="false">Food</button><button class="filter" type="button" data-cat="seasonal" aria-pressed="false">Seasonal</button></div>
+<div class="diet-row"><div class="diet" role="group" aria-label="Dietary filters"><label><input type="checkbox" value="V"> Vegetarian (V)</label><label><input type="checkbox" value="VG"> Vegan (VG)</label></div><span id="fav-count" aria-live="polite"></span></div>
+<p class="toolbar-note" id="result-count" aria-live="polite"></p>
+<div class="card"><ul class="menu-list" id="menu-list"><li class="empty">Loading the menu…</li></ul></div>
+<noscript><p>Please enable JavaScript to see the menu. Highlights: Single-Origin Espresso R32, Flat White R38, Butter Croissant R30.</p></noscript>
+<p class="cta" style="margin-top:32px">Planning a get-together? <a href="enquiry.html">Ask about catering</a>.</p>
+</div></section>
+</main>
+<footer>
+<div class="container footer-grid">
+<div><h2>Brew &amp; Bean Artisan Coffee</h2><p>Exceptional, ethically sourced coffee in a warm space where community connections are brewed daily.</p>
+<div class="social"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></div></div>
+<div><h3>Explore</h3><p><a href="menu.html">Coffee &amp; food menu</a></p><p><a href="about.html">Our story</a></p><p><a href="events.html">Events &amp; workshops</a></p><p><a href="enquiry.html">Catering enquiry</a></p><p><a href="contact.html">Contact us</a></p></div>
+<div><h3>Visit</h3><p><span data-open-status class="open-now"></span></p><p>Mon–Fri: 7:00–17:00<br>Sat–Sun: 8:00–16:00</p><p>📍 12 Roast Lane, Cape Town, 8001</p><p>✉ <a href="mailto:hello@brewandbeancoffee.com">hello@brewandbeancoffee.com</a></p></div>
+</div>
+<div class="container copyright">© <span data-year>2026</span> Brew &amp; Bean Artisan Coffee. Crafted with care.</div>
+</footer>
+<script src="script.js" defer></script>
+</body>
+</html>

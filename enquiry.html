@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Catering, Events &amp; Bean Enquiries | Brew &amp; Bean</title>
+<meta name="description" content="Ask Brew &amp; Bean about catering, private events, workshop seats or take-home coffee beans and get an instant price and availability response.">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://*.tile.openstreetmap.org https://cdnjs.cloudflare.com; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#2c221c">
+<link rel="canonical" href="https://YOUR-SITE.netlify.app/enquiry.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Brew & Bean Artisan Coffee">
+<meta property="og:title" content="Catering, Events &amp; Bean Enquiries | Brew &amp; Bean"><meta property="og:description" content="Ask Brew &amp; Bean about catering, private events, workshop seats or take-home coffee beans and get an instant price and availability response.">
+<meta property="og:url" content="https://YOUR-SITE.netlify.app/enquiry.html"><meta property="og:image" content="https://YOUR-SITE.netlify.app/images/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<header>
+<div class="container nav">
+<a class="brand" href="index.html" aria-label="Brew &amp; Bean home"><span class="logo" aria-hidden="true">☕</span>Brew &amp; Bean</a>
+<button class="menu-btn" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">☰</button>
+<nav id="site-nav" aria-label="Main"><a href="index.html">Home</a><a href="menu.html">Menu</a><a href="about.html">About Us</a><a href="events.html">Events</a><a href="enquiry.html" aria-current="page">Enquiry</a><a href="contact.html">Contact</a></nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero"><div class="container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a> › Enquiry</nav><div class="eyebrow">Instant quote</div><h1>Make an Enquiry</h1><p>Tell us what you need and we will check price and availability straight away.</p></div></section>
+
+<section class="section"><div class="container grid grid-2" style="align-items:start">
+<div class="card"><h2>Your enquiry</h2><p style="margin-bottom:18px">Fields marked <span aria-hidden="true">*</span> are required.</p>
+<form name="enquiry" method="post" action="thank-you.html" data-validate="enquiry" data-netlify="true" netlify-honeypot="bot-field" id=enquiry-form><input type="hidden" name="form-name" value="enquiry"><p class="hp-field" aria-hidden="true"><label>Leave this empty <input name="bot-field" class="hp" tabindex="-1" autocomplete="off"></label></p><div class="form-grid"><div class="field"><label for="name">Full name <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" required  aria-describedby="name-error" maxlength="60" minlength="2" autocomplete="name"><span class="error" id="name-error"></span></div><div class="field"><label for="email">Email address <span aria-hidden="true">*</span></label><input id="email" name="email" type="email" required  aria-describedby="email-error" maxlength="100" autocomplete="email"><span class="error" id="email-error"></span></div><div class="field"><label for="phone">Phone number <span aria-hidden="true">*</span></label><input id="phone" name="phone" type="tel" required  aria-describedby="phone-error" maxlength="20" autocomplete="tel" placeholder="021 123 4567"><span class="error" id="phone-error"></span></div><div class="field" ><label for="type">What is your enquiry about? <span aria-hidden=true>*</span></label><select id="type" name="type" required aria-describedby="type-error"><option value="catering">Catering</option><option value="private-event">Private event (after hours)</option><option value="workshop">Workshop or tasting seats</option><option value="beans">Coffee beans (take-home)</option></select><span class="error" id="type-error"></span></div><div class="field" data-show-for="workshop"><label for="event">Which event? <span aria-hidden=true>*</span></label><select id="event" name="event" required aria-describedby="event-error"><option value="">Choose an event…</option></select><span class="error" id="event-error"></span></div><div class="field" data-show-for="catering"><label for="package">Catering package <span aria-hidden=true>*</span></label><select id="package" name="package" required aria-describedby="package-error"><option value="box">Coffee &amp; pastry box — R65 pp</option><option value="cart">Barista cart &amp; pastries — R95 pp</option></select><span class="error" id="package-error"></span></div><div class="field" data-show-for="beans"><label for="product">Beans <span aria-hidden=true>*</span></label><select id="product" name="product" required aria-describedby="product-error"><option value="guji">Ethiopian Guji 250g — R120</option><option value="house">House Blend 250g — R95</option><option value="kilo">House Blend 1kg — R420</option></select><span class="error" id="product-error"></span></div><div class="field" data-show-for="catering private-event"><label for="date">Preferred date <span aria-hidden="true">*</span></label><input id="date" name="date" type="date" required  aria-describedby="date-error" ><p class=hint>Catering needs 3 days’ notice (7 on weekends).</p><span class="error" id="date-error"></span></div><div class="field" data-show-for="catering private-event workshop"><label for="guests">Number of guests / seats <span aria-hidden="true">*</span></label><input id="guests" name="guests" type="number" required  aria-describedby="guests-error" min="1" max="200" inputmode="numeric"><span class="error" id="guests-error"></span></div><div class="field" data-show-for="beans"><label for="qty">Number of bags <span aria-hidden="true">*</span></label><input id="qty" name="qty" type="number" required  aria-describedby="qty-error" min="1" max="50" inputmode="numeric"><span class="error" id="qty-error"></span></div><div class="field full"><label for="message">Anything else we should know? (optional)</label><textarea id="message" name="message" maxlength="500"  data-counter placeholder="" aria-describedby="message-error"></textarea><div class="counter" id="message-count" aria-hidden="true"></div><span class="error" id="message-error"></span></div></div><button class="btn btn-primary" type="submit">Check price &amp; availability</button><div class="form-msg" role="status" aria-live="polite"></div></form><div class="result" hidden tabindex="-1" role="status" aria-live="polite"></div></div>
+<div><div class="card"><h2>How it works</h2><p>Choose what you are enquiring about and fill in the details. We calculate the cost and check availability instantly. For general questions use the <a href="contact.html">contact form</a>.</p></div>
+<div class="card" style="margin-top:20px"><h3>Good to know</h3><p>Catering: minimum 10 guests, free delivery over R2,000.<br>Private events: up to 30 guests, Mon–Sat evenings.<br>Beans: free courier delivery over R500.</p></div></div>
+</div></section>
+</main>
+<footer>
+<div class="container footer-grid">
+<div><h2>Brew &amp; Bean Artisan Coffee</h2><p>Exceptional, ethically sourced coffee in a warm space where community connections are brewed daily.</p>
+<div class="social"><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">Facebook</a></div></div>
+<div><h3>Explore</h3><p><a href="menu.html">Coffee &amp; food menu</a></p><p><a href="about.html">Our story</a></p><p><a href="events.html">Events &amp; workshops</a></p><p><a href="enquiry.html">Catering enquiry</a></p><p><a href="contact.html">Contact us</a></p></div>
+<div><h3>Visit</h3><p><span data-open-status class="open-now"></span></p><p>Mon–Fri: 7:00–17:00<br>Sat–Sun: 8:00–16:00</p><p>📍 12 Roast Lane, Cape Town, 8001</p><p>✉ <a href="mailto:hello@brewandbeancoffee.com">hello@brewandbeancoffee.com</a></p></div>
+</div>
+<div class="container copyright">© <span data-year>2026</span> Brew &amp; Bean Artisan Coffee. Crafted with care.</div>
+</footer>
+<script src="script.js" defer></script>
+</body>
+</html>
