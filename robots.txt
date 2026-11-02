@@ -1,0 +1,8 @@
+# Brew & Bean — instructions for search engine crawlers
+User-agent: *
+Allow: /
+Disallow: /thank-you.html
+Disallow: /documents/
+Disallow: /screenshots/
+
+Sitemap: https://YOUR-SITE.netlify.app/sitemap.xml
